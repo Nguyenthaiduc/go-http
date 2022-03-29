@@ -10,7 +10,14 @@ type handle struct {
 }
 
 func (h *handle) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path == "/" {
+		w.Write([]byte("Home Page"))
+
+	}else if r.URL.Path == "/about"{
+		w.Write([]byte("About page"))
+	}else{
 	w.Write([]byte("Custom handler"))
+}
 }
 
 func DemoCustomServer() {
