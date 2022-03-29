@@ -89,7 +89,7 @@ func returnHtml(w http.ResponseWriter, r *http.Request) {
 
 /* Handle return file */
 func returnFile(w http.ResponseWriter, r *http.Request) {
-	// filePath := path.Join("view", "index.html")
+	// filePath := path.Join("view", "index.html") //source file , name file
 	filePath := path.Join("static/image", "nature.jpg")
 
 	http.ServeFile(w, r, filePath)
@@ -116,5 +116,5 @@ func DemoRouter() {
 	http.Handle("/static/", http.StripPrefix("/static", fileServer))
 
 	// Run server on port
-	log.Fatal(http.ListenAndServe(":3000", nil))
+	log.Fatal(http.ListenAndServe(":3007", nil))
 }
